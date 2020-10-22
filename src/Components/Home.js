@@ -7,60 +7,59 @@ const Home = () => {
     <div className='home'>
       <div className='home__container'>
         <img
-          src='https://images-eu.ssl-images-amazon.com/images/G/31/prime/jupiter20/GW-FInal/FinaleDesktop-Hero_3000x1200_Live-now_1x_NP._CB419052847_.jpg'
-          alt=''
           className='home__image'
+          src='https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg'
+          alt=''
         />
 
         <div className='home__row'>
           <Product
-            id='15'
-            title='The Lean StartUP'
-            price='29.99'
-            image='https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg'
+            id='12321341'
+            title='The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback'
+            price={11.96}
             rating={5}
+            image='https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg'
           />
           <Product
-            id='65588'
-            title='Bose SoundSport Free, True Wireless Earbuds, (Sweatproof Bluetooth Headphones for Workouts and Sports), Midnight Blue/Citron'
-            price='54.55'
-            image='https://images-na.ssl-images-amazon.com/images/I/61Bx0jEMbnL._SL1500_.jpg'
-            rating={3}
-          />
-        </div>
-        <div className='home__row'>
-          <Product
-            id='987878'
-            title='Fossil Sport 43 Digital Black Dial Me'
-            price='56.99'
-            image='https://images-na.ssl-images-amazon.com/images/I/71H6DjbKjHL._UL1500_.jpg'
+            id='49538094'
+            title='Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl'
+            price={239.0}
             rating={4}
-          />
-          <Product
-            id='65489416514'
-            title='Fossil The Carlyle Hr Digital Black Dial Men'
-            price='98.99'
-            image='https://images-na.ssl-images-amazon.com/images/I/71ERfTd2-KL._UL1500_.jpg'
-            rating={5}
-          />
-
-          <Product
-            id='654984'
-            title='
-Panasonic 100 cm (40 inches) Full HD Android Smart LED TV TH-40HS450DX (Black) (2020 Model)'
-            price='99.69'
-            image='https://images-na.ssl-images-amazon.com/images/I/91auveGcURL._SL1500_.jpg'
-            rating={2}
+            image='https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg'
           />
         </div>
+
         <div className='home__row'>
           <Product
-            id='989855'
-            title='Samsung 80 cm (32 Inches) HD Ready LED TV UA32T4010ARXXL (Black) (2020 model)
-'
-            price='65.66'
-            image='https://images-na.ssl-images-amazon.com/images/I/81N7bMl70HL._SL1500_.jpg'
-            rating={2}
+            id='4903850'
+            title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
+            price={199.99}
+            rating={3}
+            image='https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg'
+          />
+          <Product
+            id='23445930'
+            title='Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric'
+            price={98.99}
+            rating={5}
+            image='https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$'
+          />
+          <Product
+            id='3254354345'
+            title='New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)'
+            price={598.99}
+            rating={4}
+            image='https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg'
+          />
+        </div>
+
+        <div className='home__row'>
+          <Product
+            id='90829332'
+            title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor - Super Ultra Wide Dual WQHD 5120 x 1440"
+            price={1094.98}
+            rating={4}
+            image='https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg'
           />
         </div>
       </div>
