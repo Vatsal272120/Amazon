@@ -7,12 +7,12 @@ import Checkout from "./Components/Checkout";
 import Login from "./Components/Login";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
+import Payment from "./Components/Payment";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
-
     // to keep track of the user
     auth.onAuthStateChanged((authUser) => {
       console.log(authUser, "😊");
@@ -37,6 +37,10 @@ function App() {
     <Router>
       <div className='app'>
         <Switch>
+          <Route path='/payment'>
+            <Header />
+            <Payment />
+          </Route>
           <Route path='/login'>
             <Login />
           </Route>
