@@ -22,12 +22,13 @@ const Payment = () => {
   const [succeeded, setsucceeded] = useState(false);
 
   // generate the client secret key- dependent on the basket( price )
+  const [clientSecret, setclientSecret] = useState();
 
   // whenever the basket changes, code will make the request and update the client secret
   useEffect(() => {
-    getClientSecret = async () => {
+    const getClientSecret = async () => {
       // setting up
-      const reponse = await axios({
+      const response = await axios({
         method: "post",
         url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
       });
@@ -38,8 +39,7 @@ const Payment = () => {
     getClientSecret();
   }, [basket]);
 
-  // client secret
-  const [clientSecret, setclientSecret] = useState();
+  console.log(clientSecret);
 
   // stripe
   const handleSubmit = async (e) => {
@@ -61,7 +61,7 @@ const Payment = () => {
         seterror(null);
         setprocessing(false);
 
-        history.replace('/orders')
+        history.replace("/orders");
       });
   };
 
