@@ -7,6 +7,7 @@ import CurrencyFormat from "react-currency-format";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { getBasketTotal } from "../reducer";
 import axios from "../axios";
+import { db } from "../firebase";
 
 const Payment = () => {
   const history = useHistory();
@@ -40,26 +41,42 @@ const Payment = () => {
   }, [basket]);
 
   console.log(clientSecret);
+  console.log("👱", user);
 
   // stripe
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // blocks multiple clicking of the buy btn
+    // blocks multiple clicking of the buy btn - payment in process
     setprocessing(true);
 
+    // card info
     const payload = await stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),
         },
       })
+      // paymentIntent = payment Confirmation
       .then(({ paymentIntent }) => {
-        // paymentIntent = payment Confirmation
+        // pushing into the database
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
 
         setsucceeded(true);
         seterror(null);
         setprocessing(false);
+
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
 
         history.replace("/orders");
       });
